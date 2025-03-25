@@ -64,7 +64,14 @@ header img {
     background-color: #E74C3C;
     color: white;
     padding: 50px 20px;
+    text-align: center; /* Centrer le texte */
 }
+
+/* Optional: Adding a little space between paragraphs */
+#about p {
+    margin-bottom: 20px;
+}
+
 
 /* Formulaire de contact */
 form {
