@@ -25,11 +25,17 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 /* Header */
@@ -47,9 +53,9 @@ header img {
 /* Portfolio */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    width: 60%;
+    width: 80%;
     margin: auto;
     padding: 20px 0;
 }
@@ -59,128 +65,82 @@ header img {
     border-radius: 10px;
 }
 
+/* About Section */
 #about {
     background-color: #E74C3C;
     color: white;
     padding: 50px 20px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#about h2 {
+    margin-bottom: 30px; /* Space between the title and paragraphs */
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 80%;
+    margin: auto;
 }
 
 #about p {
-    display: inline-block; 
-    width: 20%; /* Ajuste la largeur pour qu'ils tiennent sur une ligne */
-    vertical-align: middle;
-    text-align: start; /* Centrer le texte à l'intérieur */
-    margin-bottom: 20px;
+    flex: 1;
+    text-align: justify;
     line-height: 1.5;
+    max-width: 45%;
 }
-
-#about div {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espacement entre les paragraphes */
-}
-
 
 /* Formulaire de contact */
 form {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 50%;
+    max-width: 400px;
     margin: auto;
 }
 
-/* Styles des champs */
 input, textarea {
     padding: 10px;
     margin: 10px 0;
-    border: none; /* Supprime tous les bords */
-    border-bottom: 2px solid #ccc; /* Ajoute seulement un bord en bas */
-    outline: none; /* Supprime le contour bleu au focus */
-    background: transparent; /* Rend le fond transparent */
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background: transparent;
+    width: 100%;
 }
 
-/* Spécifique pour le champ message */
 textarea {
-    width: 100%; /* Laisse le message occuper toute la largeur du formulaire */
-    min-height: 100px; /* Augmente la hauteur du champ de texte */
+    min-height: 100px;
 }
 
-/* Effet au focus */
 input:focus, textarea:focus {
-    border-bottom: 2px solid #E74C3C; /* Change la couleur du bord au focus */
+    border-bottom: 2px solid #E74C3C;
 }
 
-/* Styliser le bouton */
+
 button {
     background-color: #E74C3C;
     color: white;
     border: none;
     border-radius: 10px;
-    padding: 15px;
-    width: 20%; /* Réduire la largeur */
-    align-self: flex-start; /* Aligner le bouton à gauche */
+    padding: 10px 20px; /* Reduced padding to make the button shorter */
     cursor: pointer;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: auto; /* You can adjust this if you want a fixed width */
+    align-self: flex-start; /* Align the button to the left */
+}
+
+
+button:hover {
+    background-color: #C0392B;
 }
 
 /* Footer */
-
-/* Style du footer */
-footer {
-    background-color: #34495E; /* Bleu marine clair */
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px; /* Pour un peu de marge intérieure */
-    color: white;
-}
-
-/* Conteneur des 3 sections */
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px; /* Pour centrer et limiter la largeur */
-}
-
-/* Style des sections (gauche, centre, droite) */
-.footer-section {
-    text-align: center;
-    width: 30%;  
-}
-
-.footer-section p {
-    line-height: 0.5;
-}
-
-/* Espacement entre les icônes dans la section centrale */
-.footer-icons {
-    display: flex;
-    justify-content: center; 
-    margin-top: 30px;
-    width: auto;  /* Ajuste la largeur en fonction du contenu */
-    gap: 15px;  
-}
-
-/* Style des icônes */
-.footer-icons i {
-    font-size: 20px; 
-    color: white;    
-    cursor: pointer; /* Pointeur quand on survole l'icône */
-    border: 2px solid white;
-    border-radius: 50%;
-    padding: 10px;
-}
-
-/* Espacement entre les sections */
-.footer-section + .footer-section {
-    margin-left: 100px;
-}
-
-
-/* Style du premier footer */
 footer {
     background-color: #34495E;
     color: white;
@@ -188,84 +148,98 @@ footer {
     text-align: center;
 }
 
-/* Style du deuxième footer 'en div' */
-.second-footer {
-    background-color: #2C3E50;
-    color: white;
-    padding: 20px 0;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
     text-align: center;
 }
 
-/* Media Queries */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
 
-/* Pour les tablettes */
+.footer-icons i {
+    font-size: 20px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.second-footer {
+    background-color: #1d2934;
+    color: white;
+    height: auto; /* La hauteur s'ajuste automatiquement en fonction du contenu */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: -1px; /* Coller le deuxième footer au premier */
+}
+
+
+/* Responsive */
 @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr); /* Afficher 2 colonnes au lieu de 3 */
-        width: 80%; /* Augmenter la largeur */
-    }
-
-    header img {
-        width: 80px; /* Réduire la taille de l'image */
-    }
-
-    form {
-        width: 50%; /* Augmenter la largeur du formulaire */
-    }
-
     nav .container {
-        flex-direction: column; /* Empiler les éléments de la navbar */
+        flex-direction: column;
         align-items: center;
     }
 
     nav ul {
-        flex-direction: column; /* Empiler les éléments du menu */
+        flex-direction: column;
         gap: 10px;
     }
 
-    footer {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .footer-content {
         flex-direction: column;
         align-items: center;
-        width: 100%;
     }
 
     .footer-section {
-        width: 100%; /* Prendre toute la largeur */
+        width: 100%;
         margin-bottom: 20px;
-    }
-
-    .footer-section + .footer-section {
-        margin-left: 0;
     }
 }
 
-/* Pour les smartphones */
 @media (max-width: 480px) {
-    .grid {
-        grid-template-columns: 1fr; /* Afficher une seule colonne */
-        width: 90%; /* Augmenter la largeur */
-    }
-
     form {
-        width: 80%; /* Réduire la largeur du formulaire */
+        width: 90%;
     }
 
     header img {
-        width: 60px; /* Réduire la taille de l'image */
-    }
-
-    .footer-content {
-        width: 100%;
-    }
-
-    .footer-section {
-        width: 100%; /* Prendre toute la largeur */
-        margin-bottom: 20px;
+        width: 60px;
     }
 }
- 
+
+
+/* Responsive for tablets */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #about p {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+/* Responsive for smartphones */
+@media (max-width: 480px) {
+    #about p {
+        width: 100%;
+        padding: 0 10px;
+        text-align: left;
+    }
+}
