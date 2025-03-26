@@ -87,27 +87,112 @@ header img {
 form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 25%;
     margin: auto;
 }
 
+/* Styles des champs */
 input, textarea {
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: none; /* Supprime tous les bords */
+    border-bottom: 2px solid #ccc; /* Ajoute seulement un bord en bas */
+    outline: none; /* Supprime le contour bleu au focus */
+    background: transparent; /* Rend le fond transparent */
 }
 
+/* Spécifique pour le champ message */
+textarea {
+    width: 100%; /* Laisse le message occuper toute la largeur du formulaire */
+    min-height: 100px; /* Augmente la hauteur du champ de texte */
+}
+
+/* Effet au focus */
+input:focus, textarea:focus {
+    border-bottom: 2px solid #E74C3C; /* Change la couleur du bord au focus */
+}
+
+/* Styliser le bouton */
 button {
     background-color: #E74C3C;
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 20%; /* Réduire la largeur */
+    align-self: flex-start; /* Aligner le bouton à gauche */
+    cursor: pointer;
+    margin-bottom: 40px;
 }
 
 /* Footer */
+
+/* Style du footer */
 footer {
-    background-color: #2C3E50;
+    background-color: #34495E; /* Bleu marine clair */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Pour un peu de marge intérieure */
+    color: white;
+}
+
+/* Conteneur des 3 sections */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Pour centrer et limiter la largeur */
+}
+
+/* Style des sections (gauche, centre, droite) */
+.footer-section {
+    text-align: center;
+    width: 30%; /* Chaque section occupe 30% de la largeur */
+}
+
+.footer-section p {
+    line-height: 0.5;
+}
+
+/* Espacement entre les icônes dans la section centrale */
+.footer-icons {
+    display: flex;
+    justify-content: center;  /* Centre les icônes */
+    margin-top: 30px;
+    width: auto;  /* Ajuste la largeur en fonction du contenu */
+    gap: 15px;  /* Espace de 15px entre les icônes */
+}
+
+/* Style des icônes */
+.footer-icons i {
+    font-size: 20px;  /* Augmente la taille des icônes */
+    color: white;     /* Garde la couleur des icônes en blanc */
+    cursor: pointer; /* Pointeur quand on survole l'icône */
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Espacement entre les sections */
+.footer-section + .footer-section {
+    margin-left: 100px;
+}
+
+
+/* Style du premier footer */
+footer {
+    background-color: #34495E;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style du deuxième footer (avec une div) */
+.second-footer {
+    background-color: #2C3E50; /* Une couleur différente pour différencier les deux */
     color: white;
     padding: 20px 0;
-    margin-top: 20px;
+    text-align: center;
 }
