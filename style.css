@@ -59,17 +59,27 @@ header img {
     border-radius: 10px;
 }
 
-/* About */
 #about {
     background-color: #E74C3C;
     color: white;
     padding: 50px 20px;
-    text-align: center; /* Centrer le texte */
+    text-align: center;
 }
 
-/* Optional: Adding a little space between paragraphs */
 #about p {
+    display: inline-block; /* Les afficher en bloc */
+    width: 20%; /* Ajuste la largeur pour qu'ils tiennent sur une ligne */
+    vertical-align: middle;
+    text-align: start; /* Centrer le texte à l'intérieur */
     margin-bottom: 20px;
+    line-height: 1.5;
+
+}
+
+#about div {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les paragraphes */
 }
 
 
