@@ -76,7 +76,7 @@ header img {
 }
 
 #about h2 {
-    margin-bottom: 30px; /* Space between the title and paragraphs */
+    margin-bottom: 30px; 
 }
 
 .about-container {
@@ -127,12 +127,12 @@ button {
     color: white;
     border: none;
     border-radius: 10px;
-    padding: 10px 20px; /* Reduced padding to make the button shorter */
+    padding: 10px 20px; 
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 20px;
-    width: auto; /* You can adjust this if you want a fixed width */
-    align-self: flex-start; /* Align the button to the left */
+    width: auto; 
+    align-self: flex-start; 
 }
 
 
