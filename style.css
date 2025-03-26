@@ -67,13 +67,12 @@ header img {
 }
 
 #about p {
-    display: inline-block; /* Les afficher en bloc */
+    display: inline-block; 
     width: 20%; /* Ajuste la largeur pour qu'ils tiennent sur une ligne */
     vertical-align: middle;
     text-align: start; /* Centrer le texte à l'intérieur */
     margin-bottom: 20px;
     line-height: 1.5;
-
 }
 
 #about div {
@@ -149,7 +148,7 @@ footer {
 /* Style des sections (gauche, centre, droite) */
 .footer-section {
     text-align: center;
-    width: 30%; /* Chaque section occupe 30% de la largeur */
+    width: 30%;  
 }
 
 .footer-section p {
@@ -159,16 +158,16 @@ footer {
 /* Espacement entre les icônes dans la section centrale */
 .footer-icons {
     display: flex;
-    justify-content: center;  /* Centre les icônes */
+    justify-content: center; 
     margin-top: 30px;
     width: auto;  /* Ajuste la largeur en fonction du contenu */
-    gap: 15px;  /* Espace de 15px entre les icônes */
+    gap: 15px;  
 }
 
 /* Style des icônes */
 .footer-icons i {
-    font-size: 20px;  /* Augmente la taille des icônes */
-    color: white;     /* Garde la couleur des icônes en blanc */
+    font-size: 20px; 
+    color: white;    
     cursor: pointer; /* Pointeur quand on survole l'icône */
     border: 2px solid white;
     border-radius: 50%;
@@ -189,10 +188,84 @@ footer {
     text-align: center;
 }
 
-/* Style du deuxième footer (avec une div) */
+/* Style du deuxième footer 'en div' */
 .second-footer {
-    background-color: #2C3E50; /* Une couleur différente pour différencier les deux */
+    background-color: #2C3E50;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
+
+/* Media Queries */
+
+/* Pour les tablettes */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Afficher 2 colonnes au lieu de 3 */
+        width: 80%; /* Augmenter la largeur */
+    }
+
+    header img {
+        width: 80px; /* Réduire la taille de l'image */
+    }
+
+    form {
+        width: 50%; /* Augmenter la largeur du formulaire */
+    }
+
+    nav .container {
+        flex-direction: column; /* Empiler les éléments de la navbar */
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column; /* Empiler les éléments du menu */
+        gap: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-section {
+        width: 100%; /* Prendre toute la largeur */
+        margin-bottom: 20px;
+    }
+
+    .footer-section + .footer-section {
+        margin-left: 0;
+    }
+}
+
+/* Pour les smartphones */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr; /* Afficher une seule colonne */
+        width: 90%; /* Augmenter la largeur */
+    }
+
+    form {
+        width: 80%; /* Réduire la largeur du formulaire */
+    }
+
+    header img {
+        width: 60px; /* Réduire la taille de l'image */
+    }
+
+    .footer-content {
+        width: 100%;
+    }
+
+    .footer-section {
+        width: 100%; /* Prendre toute la largeur */
+        margin-bottom: 20px;
+    }
+}
+ 
